@@ -24,4 +24,4 @@ Open it and check if app is visible
 
 Once both things are running in the separate terminals
 you can test it by adding new user, editing it, removing it.
-This app is build using mobile-first approach.
+This app is build using mobile-first approach
