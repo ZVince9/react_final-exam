@@ -25,4 +25,3 @@ Open it and check if app is visible
 Once both things are running in the separate terminals
 you can test it by adding new user, editing it, removing it.
 This app is build using mobile-first approach
-![Uploading screencapture-localhost-5173-2023-05-08-19_46_21.png…]()
