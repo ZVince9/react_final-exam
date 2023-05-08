@@ -1,0 +1,29 @@
+###
+GET http://localhost:5012/api/users
+
+###
+GET http://localhost:5012/api/users/645420bdd09ec9f8ee0ab06a
+// GET USER BY ID
+
+###
+POST http://localhost:5012/api/users
+Content-Type: application/json
+
+{
+    "name": "Zilvinas Stanevicius",
+    "email": "zilvinas.stanevicius@gmail.com",
+    "from": "2023-01-01",
+    "till": "2024-01-01"
+}
+
+
+### PUT USER BY ID
+PUT http://localhost:5012/api/users/6457ccd737d81cfed1352c68
+Content-Type: application/json
+
+{
+    "name":"asdas"
+}
+
+### DELETE USER BY ID
+DELETE http://localhost:5012/api/users/645414794fb360aa444dad8c
