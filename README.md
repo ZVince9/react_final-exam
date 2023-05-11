@@ -27,4 +27,4 @@ you can test it by adding new user, editing it, removing it.
 This app is build using mobile-first approach
 
 
-![Image Description](./fe/shared/images/full.png)
+![Image Description](./fe/shared/images/full2.png)
