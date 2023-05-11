@@ -1,8 +1,16 @@
 import { StyledInputWrapper, StyledIcon, StyledInput } from "./style";
 
 const Input = (props) => {
-  const { type, value, setValue, icon, placeholder, required, maxLength } =
-    props;
+  const {
+    type,
+    value,
+    setValue,
+    icon,
+    placeholder,
+    required,
+    maxLength,
+    marginLeft,
+  } = props;
 
   return (
     <StyledInputWrapper>
@@ -14,6 +22,7 @@ const Input = (props) => {
         placeholder={placeholder}
         required={required}
         maxLength={maxLength}
+        style={{ marginLeft: marginLeft }}
       />
     </StyledInputWrapper>
   );

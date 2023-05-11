@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { StyledForm, StyledDataPicker, StyledP } from "./style";
+import { StyledForm, StyledDataInputs, StyledP } from "./style";
 import Input from "../../atoms/Input";
 import ICONS from "../../../shared/icons";
 import Button from "../../atoms/Button";
@@ -10,13 +10,12 @@ import {
   datePickerError,
 } from "../../../shared/texts/registrationContentArray";
 
-function EditUserCard({ data, onSubmit, user }) {
-  const datePickerRef = useRef(null);
+function EditUserCard({ data, user, onSubmit }) {
   const [name, setName] = useState(user.name);
   const [surname, setSurname] = useState(user.surname);
   const [email, setEmail] = useState(user.email);
-  const [from, setFrom] = useState(user.from);
-  const [till, setTill] = useState(user.till);
+  const [from, setFrom] = useState(user.from.split("T")[0]);
+  const [till, setTill] = useState(user.till.split("T")[0]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,8 +35,8 @@ function EditUserCard({ data, onSubmit, user }) {
     onSubmit({ name, surname, email, from, till });
     setName("");
     setEmail("");
-    setFrom(null);
-    setTill(null);
+    setFrom("");
+    setTill("");
   };
 
   return (
@@ -50,6 +49,7 @@ function EditUserCard({ data, onSubmit, user }) {
         icon={ICONS.user}
         placeholder="Name"
         required
+        marginLeft={"8px"}
       />
       <Input
         type="text"
@@ -57,6 +57,7 @@ function EditUserCard({ data, onSubmit, user }) {
         setValue={setSurname}
         icon={ICONS.user}
         placeholder="Surname"
+        marginLeft={"8px"}
         required
       />
       <Input
@@ -65,28 +66,22 @@ function EditUserCard({ data, onSubmit, user }) {
         setValue={setEmail}
         icon={ICONS.envelope}
         placeholder="Email"
+        marginLeft={"8px"}
         required
       />
-      <StyledDataPicker>
-        <DatePicker
-          selected={new Date(from)}
-          onChange={(date) => setFrom(date)}
-          dateFormat="dd/MM/yyyy"
-          ref={datePickerRef}
-          className="custom-datepicker"
-          placeholderText="From"
-          required
-        />
-        <DatePicker
-          selected={new Date(till)}
-          onChange={(date) => setTill(date)}
-          dateFormat="dd/MM/yyyy"
-          className="custom-datepicker"
-          placeholderText="Till"
-          minDate={new Date(from)}
-          required
-        />
-      </StyledDataPicker>
+      <StyledDataInputs
+        type="date"
+        value={from}
+        onChange={(e) => setFrom(e.target.value)}
+        required
+      />
+      <StyledDataInputs
+        type="date"
+        value={till}
+        onChange={(e) => setTill(e.target.value)}
+        min={from}
+        required
+      />
       <Button text={"Save"} type="submit" width={"100%"} />
     </StyledForm>
   );
