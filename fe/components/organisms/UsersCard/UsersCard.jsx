@@ -39,7 +39,6 @@ const UsersCard = ({ data, onDelete, onEdit }) => {
 
   return (
     <div>
-      {console.log(data)}
       {data && data.length > 0 && (
         <StyledUserCardText>Registered Users</StyledUserCardText>
       )}
@@ -56,11 +55,11 @@ const UsersCard = ({ data, onDelete, onEdit }) => {
                   </p>
                   <p>
                     <span>From: </span>{" "}
-                    {new Date(user.from).toLocaleDateString()}
+                    {new Date(user.from).toLocaleDateString("lt-LT")}
                   </p>
                   <p>
                     <span>Till: </span>{" "}
-                    {new Date(user.till).toLocaleDateString()}
+                    {new Date(user.till).toLocaleDateString("lt-LT")}
                   </p>
                   {editedUserId === user._id ? (
                     <>

@@ -56,6 +56,7 @@ const RegistrationPage = () => {
   };
 
   const handleSubmit = (newUser) => {
+    console.log(newUser);
     if (new Date(newUser.from).getTime() > new Date(newUser.till).getTime()) {
       alert(datePickerError);
       return;

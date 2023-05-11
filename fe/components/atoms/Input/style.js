@@ -19,7 +19,6 @@ export const StyledInput = styled.input`
   border: none;
   font-size: 1rem;
   line-height: 1.5;
-  margin-left: 8px;
   width: 100%;
   &::placeholder {
     color: ${(props) => props.theme.palette.primary.grey};

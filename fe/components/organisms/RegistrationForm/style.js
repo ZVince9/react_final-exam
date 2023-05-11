@@ -60,3 +60,23 @@ export const StyledTag = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 `;
+
+export const StyledDataInputs = styled.input`
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 100%;
+  border-radius: 5px;
+  padding: calc(0.5em - 1px) calc(0.75em + 1px);
+  cursor: pointer;
+  color: ${(props) => props.theme.palette.primary.grey};
+
+  &:valid {
+    color: ${(props) => props.theme.palette.primary.black};
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(80%);
+  }
+`;
